@@ -1,23 +1,58 @@
 *** Settings ***
-Documentation    Tests to verify that account succeed and fail correctly.
-Library  SeleniumLibrary
-
+Library    SeleniumLibrary
 *** Variables ***
-${browser}   chrome
-${url}      http://demo.sentrifugo.com/
+${browser}      chrome
+${url}       https://www.techlistic.com/p/selenium-practice-form.html
+${profession}       xpath://input[@id='profession-0']
+${firstname}        xpath://input[@name='firstname']
 
 *** Test Cases ***
-Login With Valid Credentials
-    open browser     ${url}    ${browser}
-    maximize browser window
-    title should be  Sentrifugo - Open Source HRMS
-    ${"username_input"}  set variable     id:username
+LoginTest
 
-    Element Should Be Visible   ${"username_input"}
-    Element Should Be Enabled     ${"username_input"}
-    input text  id:username     EM01
-    sleep   5
-    Clear Element Text    ${"username_input"}
-    sleep    5
+    open browser        ${url}      ${browser}
+    maximize browser window
+    set selenium speed    1second
+    logintoApplication
+    Click on gender
+    Select Profession
+    listbox item
     close browser
-    close all browser
+
+*** Keywords ***
+logintoApplication
+    #textbox
+    scroll element into view    ${firstname}
+    element should be visible   ${firstname}
+    element should be enabled   ${firstname}
+    input text      ${firstname}        sathya
+    clear element text      ${firstname}
+    input text      ${firstname}        sathya
+Click on gender
+    #radio button usage
+    scroll element into view    xpath://input[@id='sex-0']
+    click element    xpath://input[@id='sex-0']
+    element should be enabled   xpath://input[@id='sex-1']
+    click element    xpath://input[@id='sex-0']
+    SELECT RADIO BUTTON    exp    exp-5
+
+
+Select Profession
+    #checkbox is checkbox should be selected
+    scroll element into view        ${profession}
+    click element    ${profession}
+    element should be enabled    ${profession}
+    select checkbox    tool-0
+    unselect checkbox    tool-0
+    select checkbox    tool-2
+    select from list by label    continents     South America
+    select from list by index    continents     6
+    sleep    1
+
+listbox item
+    #select from list box for countries
+    select from list by label    selenium_commands      Navigation Commands
+    select from list by label    selenium_commands      Switch Commands
+    select from list by label    selenium_commands      Wait Commands
+    sleep    1
+    unselect from list by label     selenium_commands      Navigation Commands
+    sleep    1

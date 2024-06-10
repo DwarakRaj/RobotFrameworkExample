@@ -1,6 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
-
+#iframe not working as per new updates. Need to try woth new varites
 *** Variables ***
 ${browser}      chrome
 ${url}      	https://seleniumhq.github.io/selenium/docs/api/java/index
@@ -9,14 +9,13 @@ ${url}      	https://seleniumhq.github.io/selenium/docs/api/java/index
 To Perform To handle IFrame
 
     Lunch Browser
-
     Select Frame     packageListFrame
     Click Link   com.thoughtworks.selenium
 
     unselect frame
     sleep   1second
     Select Frame     packageFrame
-    Click Link   BrowserConfigurationOptions
+    Click Link      BrowserConfigurationOptions
 
     unselect frame
     sleep   1second

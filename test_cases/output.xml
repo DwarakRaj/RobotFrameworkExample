@@ -1,220 +1,211 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.10.5 on win32)" generated="20240610 15:35:30.825" rpa="false" schemaversion="4">
-<suite id="s1" name="ExcelDataDrivenTest" source="C:\D Drive\robot-framework-example\test_cases\ExcelDataDrivenTest.robot">
-<kw name="Setup" library="login_resources" type="SETUP">
+<robot generator="Robot 6.1.1 (Python 3.10.5 on win32)" generated="20240610 16:24:32.829" rpa="false" schemaversion="4">
+<suite id="s1" name="InputBox" source="C:\D Drive\robot-framework-example\test_cases\InputBox.robot">
+<test id="s1-t1" name="LoginTest" line="10">
+<kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url}</arg>
 <arg>${browser}</arg>
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${app_url}</arg>
-<arg>${app_browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240610 15:35:36.284" level="INFO">Opening browser 'chrome' to base url 'https://admin-demo.nopcommerce.com/'.</msg>
-<status status="PASS" starttime="20240610 15:35:36.283" endtime="20240610 15:35:40.468"/>
+<msg timestamp="20240610 16:24:33.180" level="INFO">Opening browser 'chrome' to base url 'https://www.techlistic.com/p/selenium-practice-form.html'.</msg>
+<status status="PASS" starttime="20240610 16:24:33.179" endtime="20240610 16:24:40.604"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20240610 15:35:40.468" endtime="20240610 15:35:40.547"/>
+<status status="PASS" starttime="20240610 16:24:40.605" endtime="20240610 16:24:40.620"/>
 </kw>
-<status status="PASS" starttime="20240610 15:35:36.283" endtime="20240610 15:35:40.548"/>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1second</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20240610 16:24:40.621" endtime="20240610 16:24:40.622"/>
 </kw>
-<test id="s1-t1" name="Login Test Case From Excel Sheet" line="17">
-<kw name="Invalid Login">
-<arg>admin@yourstore.com</arg>
-<kw name="Input UserName" library="login_resources">
-<arg>${username}</arg>
-<kw name="Clear Element Text" library="SeleniumLibrary">
-<arg>xpath://input[@type='email']</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" starttime="20240610 15:35:40.557" endtime="20240610 15:35:40.883"/>
+<kw name="logintoApplication">
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${firstname}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240610 16:24:40.623" endtime="20240610 16:24:46.168"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath://input[@type='email']</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240610 15:35:40.885" level="INFO">Typing text 'admin@yourstore.com' into text field 'xpath://input[@type='email']'.</msg>
-<status status="PASS" starttime="20240610 15:35:40.884" endtime="20240610 15:35:41.224"/>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${firstname}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240610 16:24:48.475" level="INFO">Element 'xpath://input[@name='firstname']' is displayed.</msg>
+<status status="PASS" starttime="20240610 16:24:46.169" endtime="20240610 16:24:48.475"/>
 </kw>
-<status status="PASS" starttime="20240610 15:35:40.556" endtime="20240610 15:35:41.225"/>
-</kw>
-<kw name="Input Password" library="login_resources">
-<arg>${password}</arg>
-<kw name="Clear Element Text" library="SeleniumLibrary">
-<arg>id:Password</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" starttime="20240610 15:35:41.225" endtime="20240610 15:35:41.309"/>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${firstname}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20240610 16:24:48.476" endtime="20240610 16:24:51.699"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>id:Password</arg>
-<arg>${password}</arg>
+<arg>${firstname}</arg>
+<arg>sathya</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240610 15:35:41.310" level="INFO">Typing text '' into text field 'id:Password'.</msg>
-<status status="PASS" starttime="20240610 15:35:41.309" endtime="20240610 15:35:41.479"/>
+<msg timestamp="20240610 16:24:51.701" level="INFO">Typing text 'sathya' into text field 'xpath://input[@name='firstname']'.</msg>
+<status status="PASS" starttime="20240610 16:24:51.699" endtime="20240610 16:24:55.058"/>
 </kw>
-<status status="PASS" starttime="20240610 15:35:41.225" endtime="20240610 15:35:41.480"/>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${firstname}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20240610 16:24:55.059" endtime="20240610 16:24:57.208"/>
 </kw>
-<kw name="Click To Login Button" library="login_resources">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${firstname}</arg>
+<arg>sathya</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240610 16:24:57.209" level="INFO">Typing text 'sathya' into text field 'xpath://input[@name='firstname']'.</msg>
+<status status="PASS" starttime="20240610 16:24:57.208" endtime="20240610 16:25:00.574"/>
+</kw>
+<status status="PASS" starttime="20240610 16:24:40.622" endtime="20240610 16:25:00.574"/>
+</kw>
+<kw name="Click on gender">
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath://input[@id='sex-0']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240610 16:25:00.576" endtime="20240610 16:25:02.979"/>
+</kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath://button[@class='button-1 login-button']</arg>
+<arg>xpath://input[@id='sex-0']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240610 15:35:41.481" level="INFO">Clicking element 'xpath://button[@class='button-1 login-button']'.</msg>
-<status status="PASS" starttime="20240610 15:35:41.480" endtime="20240610 15:35:42.153"/>
+<msg timestamp="20240610 16:25:02.981" level="INFO">Clicking element 'xpath://input[@id='sex-0']'.</msg>
+<status status="PASS" starttime="20240610 16:25:02.980" endtime="20240610 16:25:05.159"/>
 </kw>
-<status status="PASS" starttime="20240610 15:35:41.480" endtime="20240610 15:35:42.154"/>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>xpath://input[@id='sex-1']</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20240610 16:25:05.160" endtime="20240610 16:25:08.382"/>
 </kw>
-<kw name="Error Message Should Be Visible" library="login_resources">
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>Login was unsuccessful. Please correct the errors and try again.</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20240610 15:35:42.208" level="INFO">Current page contains text 'Login was unsuccessful. Please correct the errors and try again.'.</msg>
-<status status="PASS" starttime="20240610 15:35:42.155" endtime="20240610 15:35:42.208"/>
-</kw>
-<status status="PASS" starttime="20240610 15:35:42.154" endtime="20240610 15:35:42.208"/>
-</kw>
-<status status="PASS" starttime="20240610 15:35:40.555" endtime="20240610 15:35:42.209"/>
-</kw>
-<status status="PASS" starttime="20240610 15:35:40.548" endtime="20240610 15:35:42.209"/>
-</test>
-<test id="s1-t2" name="Login Test Case From Excel Sheet" line="17">
-<kw name="Invalid Login">
-<arg>admin@yourstore.com</arg>
-<arg>abc</arg>
-<kw name="Input UserName" library="login_resources">
-<arg>${username}</arg>
-<kw name="Clear Element Text" library="SeleniumLibrary">
-<arg>xpath://input[@type='email']</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" starttime="20240610 15:35:42.217" endtime="20240610 15:35:42.316"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath://input[@type='email']</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240610 15:35:42.318" level="INFO">Typing text 'admin@yourstore.com' into text field 'xpath://input[@type='email']'.</msg>
-<status status="PASS" starttime="20240610 15:35:42.317" endtime="20240610 15:35:42.677"/>
-</kw>
-<status status="PASS" starttime="20240610 15:35:42.217" endtime="20240610 15:35:42.677"/>
-</kw>
-<kw name="Input Password" library="login_resources">
-<arg>${password}</arg>
-<kw name="Clear Element Text" library="SeleniumLibrary">
-<arg>id:Password</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" starttime="20240610 15:35:42.677" endtime="20240610 15:35:42.748"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id:Password</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240610 15:35:42.749" level="INFO">Typing text 'abc' into text field 'id:Password'.</msg>
-<status status="PASS" starttime="20240610 15:35:42.748" endtime="20240610 15:35:42.990"/>
-</kw>
-<status status="PASS" starttime="20240610 15:35:42.677" endtime="20240610 15:35:42.990"/>
-</kw>
-<kw name="Click To Login Button" library="login_resources">
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath://button[@class='button-1 login-button']</arg>
+<arg>xpath://input[@id='sex-0']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240610 15:35:42.992" level="INFO">Clicking element 'xpath://button[@class='button-1 login-button']'.</msg>
-<status status="PASS" starttime="20240610 15:35:42.991" endtime="20240610 15:35:43.625"/>
+<msg timestamp="20240610 16:25:08.384" level="INFO">Clicking element 'xpath://input[@id='sex-0']'.</msg>
+<status status="PASS" starttime="20240610 16:25:08.382" endtime="20240610 16:25:10.527"/>
 </kw>
-<status status="PASS" starttime="20240610 15:35:42.991" endtime="20240610 15:35:43.626"/>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>exp</arg>
+<arg>exp-5</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20240610 16:25:10.528" level="INFO">Selecting 'exp-5' from radio button 'exp'.</msg>
+<status status="PASS" starttime="20240610 16:25:10.527" endtime="20240610 16:25:13.826"/>
 </kw>
-<kw name="Error Message Should Be Visible" library="login_resources">
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>Login was unsuccessful. Please correct the errors and try again.</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20240610 15:35:43.694" level="INFO">Current page contains text 'Login was unsuccessful. Please correct the errors and try again.'.</msg>
-<status status="PASS" starttime="20240610 15:35:43.627" endtime="20240610 15:35:43.694"/>
+<status status="PASS" starttime="20240610 16:25:00.576" endtime="20240610 16:25:13.826"/>
 </kw>
-<status status="PASS" starttime="20240610 15:35:43.626" endtime="20240610 15:35:43.694"/>
+<kw name="Select Profession">
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${profession}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240610 16:25:13.829" endtime="20240610 16:25:16.166"/>
 </kw>
-<status status="PASS" starttime="20240610 15:35:42.216" endtime="20240610 15:35:43.694"/>
-</kw>
-<status status="PASS" starttime="20240610 15:35:42.212" endtime="20240610 15:35:43.696"/>
-</test>
-<test id="s1-t3" name="Login Test Case From Excel Sheet" line="17">
-<kw name="Invalid Login">
-<arg>ad@yourstore.com</arg>
-<arg>admin</arg>
-<kw name="Input UserName" library="login_resources">
-<arg>${username}</arg>
-<kw name="Clear Element Text" library="SeleniumLibrary">
-<arg>xpath://input[@type='email']</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" starttime="20240610 15:35:43.705" endtime="20240610 15:35:43.819"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath://input[@type='email']</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240610 15:35:43.821" level="INFO">Typing text 'ad@yourstore.com' into text field 'xpath://input[@type='email']'.</msg>
-<status status="PASS" starttime="20240610 15:35:43.820" endtime="20240610 15:35:44.156"/>
-</kw>
-<status status="PASS" starttime="20240610 15:35:43.704" endtime="20240610 15:35:44.156"/>
-</kw>
-<kw name="Input Password" library="login_resources">
-<arg>${password}</arg>
-<kw name="Clear Element Text" library="SeleniumLibrary">
-<arg>id:Password</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" starttime="20240610 15:35:44.157" endtime="20240610 15:35:44.233"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id:Password</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240610 15:35:44.235" level="INFO">Typing text 'admin' into text field 'id:Password'.</msg>
-<status status="PASS" starttime="20240610 15:35:44.233" endtime="20240610 15:35:44.532"/>
-</kw>
-<status status="PASS" starttime="20240610 15:35:44.156" endtime="20240610 15:35:44.532"/>
-</kw>
-<kw name="Click To Login Button" library="login_resources">
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath://button[@class='button-1 login-button']</arg>
+<arg>${profession}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240610 15:35:44.534" level="INFO">Clicking element 'xpath://button[@class='button-1 login-button']'.</msg>
-<status status="PASS" starttime="20240610 15:35:44.533" endtime="20240610 15:35:45.109"/>
+<msg timestamp="20240610 16:25:16.168" level="INFO">Clicking element 'xpath://input[@id='profession-0']'.</msg>
+<status status="PASS" starttime="20240610 16:25:16.167" endtime="20240610 16:25:18.334"/>
 </kw>
-<status status="PASS" starttime="20240610 15:35:44.532" endtime="20240610 15:35:45.109"/>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${profession}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20240610 16:25:18.334" endtime="20240610 16:25:21.421"/>
 </kw>
-<kw name="Error Message Should Be Visible" library="login_resources">
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>Login was unsuccessful. Please correct the errors and try again.</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20240610 15:35:45.146" level="INFO">Current page contains text 'Login was unsuccessful. Please correct the errors and try again.'.</msg>
-<status status="PASS" starttime="20240610 15:35:45.111" endtime="20240610 15:35:45.147"/>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>tool-0</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20240610 16:25:21.422" level="INFO">Selecting checkbox 'tool-0'.</msg>
+<status status="PASS" starttime="20240610 16:25:21.421" endtime="20240610 16:25:25.636"/>
 </kw>
-<status status="PASS" starttime="20240610 15:35:45.110" endtime="20240610 15:35:45.147"/>
+<kw name="Unselect Checkbox" library="SeleniumLibrary">
+<arg>tool-0</arg>
+<doc>Removes the selection of checkbox identified by ``locator``.</doc>
+<msg timestamp="20240610 16:25:25.637" level="INFO">Unselecting checkbox 'tool-0'.</msg>
+<status status="PASS" starttime="20240610 16:25:25.636" endtime="20240610 16:25:29.839"/>
 </kw>
-<status status="PASS" starttime="20240610 15:35:43.704" endtime="20240610 15:35:45.147"/>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>tool-2</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20240610 16:25:29.840" level="INFO">Selecting checkbox 'tool-2'.</msg>
+<status status="PASS" starttime="20240610 16:25:29.839" endtime="20240610 16:25:34.044"/>
 </kw>
-<status status="PASS" starttime="20240610 15:35:43.700" endtime="20240610 15:35:45.149"/>
-</test>
-<kw name="Closer" library="login_resources" type="TEARDOWN">
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>continents</arg>
+<arg>South America</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20240610 16:25:34.047" level="INFO">Selecting options from selection list 'continents' by label South America.</msg>
+<status status="PASS" starttime="20240610 16:25:34.045" endtime="20240610 16:25:41.308"/>
+</kw>
+<kw name="Select From List By Index" library="SeleniumLibrary">
+<arg>continents</arg>
+<arg>6</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<msg timestamp="20240610 16:25:41.309" level="INFO">Selecting options from selection list 'continents' by index 6.</msg>
+<status status="PASS" starttime="20240610 16:25:41.308" endtime="20240610 16:25:55.834"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240610 16:25:56.846" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240610 16:25:55.835" endtime="20240610 16:25:56.847"/>
+</kw>
+<status status="PASS" starttime="20240610 16:25:13.828" endtime="20240610 16:25:56.847"/>
+</kw>
+<kw name="listbox item">
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selenium_commands</arg>
+<arg>Navigation Commands</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20240610 16:25:56.850" level="INFO">Selecting options from selection list 'selenium_commands' by label Navigation Commands.</msg>
+<status status="PASS" starttime="20240610 16:25:56.849" endtime="20240610 16:26:04.099"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selenium_commands</arg>
+<arg>Switch Commands</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20240610 16:26:04.101" level="INFO">Selecting options from selection list 'selenium_commands' by label Switch Commands.</msg>
+<status status="PASS" starttime="20240610 16:26:04.099" endtime="20240610 16:26:11.370"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>selenium_commands</arg>
+<arg>Wait Commands</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20240610 16:26:11.372" level="INFO">Selecting options from selection list 'selenium_commands' by label Wait Commands.</msg>
+<status status="PASS" starttime="20240610 16:26:11.371" endtime="20240610 16:26:18.622"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240610 16:26:19.634" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240610 16:26:18.622" endtime="20240610 16:26:19.634"/>
+</kw>
+<kw name="Unselect From List By Label" library="SeleniumLibrary">
+<arg>selenium_commands</arg>
+<arg>Navigation Commands</arg>
+<doc>Unselects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20240610 16:26:19.636" level="INFO">Un-selecting options from selection list 'selenium_commands' by label Navigation Commands.</msg>
+<status status="PASS" starttime="20240610 16:26:19.635" endtime="20240610 16:26:25.856"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240610 16:26:26.867" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240610 16:26:25.856" endtime="20240610 16:26:26.867"/>
+</kw>
+<status status="PASS" starttime="20240610 16:25:56.848" endtime="20240610 16:26:26.867"/>
+</kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20240610 15:35:45.153" endtime="20240610 15:35:47.469"/>
+<status status="PASS" starttime="20240610 16:26:26.869" endtime="20240610 16:26:30.102"/>
 </kw>
-<kw name="Close All Browsers" library="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20240610 15:35:47.470" endtime="20240610 15:35:47.470"/>
-</kw>
-<status status="PASS" starttime="20240610 15:35:45.153" endtime="20240610 15:35:47.470"/>
-</kw>
-<status status="PASS" starttime="20240610 15:35:30.827" endtime="20240610 15:35:47.470"/>
+<status status="PASS" starttime="20240610 16:24:33.177" endtime="20240610 16:26:30.103"/>
+</test>
+<status status="PASS" starttime="20240610 16:24:32.831" endtime="20240610 16:26:30.105"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="3" fail="0" skip="0" id="s1" name="ExcelDataDrivenTest">ExcelDataDrivenTest</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="InputBox">InputBox</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20240610 15:35:42.210" level="WARN">Multiple tests with name 'Login Test Case From Excel Sheet' executed in suite 'ExcelDataDrivenTest'.</msg>
-<msg timestamp="20240610 15:35:43.699" level="WARN">Multiple tests with name 'Login Test Case From Excel Sheet' executed in suite 'ExcelDataDrivenTest'.</msg>
 </errors>
 </robot>
