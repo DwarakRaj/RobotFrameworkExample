@@ -13,12 +13,13 @@ Closer
 
 Input UserName
        [Arguments]   ${username}
-       Clear Element Text    id:Email
-       Input Text   id:Email    ${username}
+       Clear Element Text       xpath://input[@type='email']
+       Input Text       xpath://input[@type='email']    ${username}
 
 Input Password
         [Arguments]   ${password}
-         Clear Element Text    id:Password
+
+        Clear Element Text    id:Password
         Input Text   id:Password       ${password}
 
 Click To Login Button

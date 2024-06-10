@@ -14,7 +14,7 @@ ${url}      https://admin-demo.nopcommerce.com/
 
 
 *** Test Cases ***      username        password
-Right user empty pass   admin@yourstore.com        admin
+Right user empty pass   admin@yourstore.com        ${EMPTY}
 Right user wrong pass   admin@yourstore.com        zyx
 Wrong user right pass   ad@yourstore.com        admin
 Wrong user empty pass   ad@yourstore.com        ${EMPTY}
