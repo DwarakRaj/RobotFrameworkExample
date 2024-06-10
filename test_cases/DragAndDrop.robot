@@ -11,7 +11,6 @@ To Perform Drag and Drop
     Lunch Browser
     drag and drop      id:draggable       id:droppable
     sleep    8
-
     Close All Browsers
 
 *** Keywords ***
