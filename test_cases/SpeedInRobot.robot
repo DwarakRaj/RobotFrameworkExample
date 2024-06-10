@@ -3,7 +3,8 @@ Library  SeleniumLibrary
 
 *** Variables ***
 ${browser}      chrome
-${url}      http://www.practiceselenium.com/practice-form.html
+${url}      https://www.techlistic.com/p/selenium-practice-form.html
+
 
 *** Test Cases ***
 To Perform Select Option with Drop Down list

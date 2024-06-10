@@ -8,19 +8,19 @@ ${url}      http://testautomationpractice.blogspot.com/
 *** Test Cases ***
 Scrolling Page using JavaScript executor
 
-    Lunch Browser
+    Launch Browser
 
-    # execute javascript  window.scrollTo(0,1500)
-    # Scroll Element Into View    xpath://*[@id="HTML4"]/div[1]/img
-    execute javascript  window.scroll(0,document.body.scrollHeight)
-    sleep    5
+     execute javascript  window.scrollTo(0,1500)
+     Scroll Element Into View    xpath://div/h2[contains(text(),'Slider')]
+
+     # Use above or below code to scroll i) till element ii) till end of webpage
+#    execute javascript  window.scroll(0,document.body.scrollHeight)
+#    sleep    5
 
     Close All Browsers
 
-
-
 *** Keywords ***
-Lunch Browser
+Launch Browser
     Open Browser     ${url}     ${browser}
     Maximize Browser Window
 
