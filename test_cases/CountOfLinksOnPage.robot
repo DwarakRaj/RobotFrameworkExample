@@ -12,9 +12,10 @@ Get All Links form Website
      log to console     ${LinkCount}
 
      @{items}   Create List
-     : FOR  ${i}    IN RANGE    1   ${LinkCount}+1
-     \  ${linkText}=   Get Text    xpath:(//a)[${i}]
-     \  log to console  ${linkText}
+     FOR  ${i}    IN RANGE    1   ${LinkCount}+1
+       ${linkText}=   Get Text    xpath:(//a)[${i}]
+       log to console  ${linkText}
+     END
 
      Close All Browsers
 

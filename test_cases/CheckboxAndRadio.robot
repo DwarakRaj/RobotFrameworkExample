@@ -8,9 +8,11 @@
 Documentation    Tests to verify that account succeed and fail correctly.
 Library  SeleniumLibrary
 
+
 *** Variables ***
 ${browser}   chrome
-${url}      http://www.practiceselenium.com/practice-form.html
+#${url}      http://www.practiceselenium.com/practice-form.html
+${url}      https://www.techlistic.com/p/selenium-practice-form.html
 
 
 *** Test Cases ***

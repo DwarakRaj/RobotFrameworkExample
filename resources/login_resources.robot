@@ -22,13 +22,13 @@ Input Password
         Input Text   id:Password       ${password}
 
 Click To Login Button
-    Click Element   xpath://input[@class='button-1 login-button']
+    Click Element   xpath://button[@class='button-1 login-button']
 
 Click To Logout Button
     Click Link   Logout
 
 Error Message Should Be Visible
-    Page Should Contain     Login Was unsucessful
+    Page Should Contain     Login was unsuccessful. Please correct the errors and try again.
 
 Dashboard Page Should Be Visible
     Page Should Contain     Dashboard
